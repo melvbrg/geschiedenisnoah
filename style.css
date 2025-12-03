@@ -1,0 +1,7 @@
+
+body{margin:0;font-family:Arial;background:#ffe6f0;text-align:center;}
+button{background:#ff7f50;color:white;border:none;padding:15px 20px;font-size:18px;border-radius:10px;margin:10px;}
+.page{display:none;padding:20px;}
+.page.active{display:block;}
+#flash-container{height:70vh;overflow-y:scroll;scroll-snap-type:y mandatory;}
+.flashcard{scroll-snap-align:start;background:white;margin:20px;padding:50px;border-radius:20px;box-shadow:0 0 10px #ffa1a1;font-size:22px;}

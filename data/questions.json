@@ -1,5 +1,6 @@
 {
-  "wo2": [    {
+  "wo2": [
+    {
       "question": "Waarom startte Hitler WOII?",
       "correct": ["Expansiedrang / lebensraum (hij wou meer land)"],
       "wrong": ["Hij wou vrede sluiten met Europa"]
@@ -123,14 +124,10 @@
       "question": "Welk leger was het sterkste: Nazi-Duitsland of Frankrijk/UK?",
       "correct": ["Combinatie Frankrijk/UK"],
       "wrong": ["Nazi-Duitsland was dubbel zo sterk"]
-    }    {
-      "question": "Welke economische noodzaak zag Hitler om een oorlog te beginnen?",
-      "correct": [
-        "Duitsland is ingesloten zonder toegang tot zee",
-        "Geen toegang tot grondstoffen"
-      ],
-      "wrong": ["Duitsland was te rijk geworden"]
-    },
+    }
+  ],
+
+  "hitler1": [
     {
       "question": "Waarom wordt WOI gezien als oorzaak van WOII?",
       "correct": [
@@ -153,7 +150,7 @@
       "question": "Waarom waren Duitse leiders, bankiers en industriëlen bang voor een communistische revolutie?",
       "correct": [
         "Ze zagen wat in Rusland gebeurde",
-        "Bang dat hun macht en rijkdom zou afgenomen worden"
+        "Bang dat macht en rijkdom zou afgenomen worden"
       ],
       "wrong": ["Ze dachten dat communisten geen wapens hadden"]
     },
@@ -170,10 +167,10 @@
       "question": "Hoe zet het Duitse leger na WOI de strijd verder tegen communisten?",
       "correct": [
         "Propaganda tegen communisten",
-        "Creëren van externe vijanden (bv. Joden)",
+        "Creëren van externe vijanden",
         "Gebruik van spionnen en Thule-cirkels"
       ],
-      "wrong": ["Ze probeerden vredesonderhandelingen te starten"]
+      "wrong": ["Ze startten vredesonderhandelingen"]
     },
     {
       "question": "Welke strijd zet het Duitse leger tegenover de klassestrijd van communisten?",
@@ -203,12 +200,16 @@
       "correct": [
         "Duitsland moest veel betalen",
         "Duitsland moest land afstaan",
-        "Leger werd beperkt en Rijnland werd bezet"
+        "Leger werd beperkt",
+        "Rijnland werd bezet"
       ],
-      "wrong": ["Duitsland kreeg te veel nieuwe gebieden"]
-    },
+      "wrong": ["Duitsland kreeg veel nieuwe gebieden"]
+    }
+  ],
+
+  "hitler2": [
     {
-      "question": "Waarom geven Amerikanen leningen aan de Duitse Weimar-republiek?",
+      "question": "Waarom geven Amerikanen leningen aan de Weimar-republiek?",
       "correct": ["Om de economie te steunen en instorting te voorkomen"],
       "wrong": ["Om Duitsland te helpen een oorlog te starten"]
     },
@@ -223,121 +224,48 @@
       "wrong": ["Omdat Duitsland weigerde terug te betalen"]
     },
     {
-      "question": "Wat is de oorzaak van de Beurscrash van 1929?",
+      "question": "Wat is de oorzaak van de beurscrash van 1929?",
       "correct": [
         "Europa kocht minder van de VS",
         "Boeren & bedrijven konden leningen niet terugbetalen",
         "Banken kwamen in problemen",
         "Geen nieuwe leningen",
-        "Mensen verkochten massaal aandelen → beurs stortte in"
+        "Mensen verkochten massaal aandelen"
       ],
-      "wrong": ["De VS stopte met het maken van technologie"]
+      "wrong": ["De VS stopte met technologie maken"]
     },
     {
       "question": "Hoe wordt Hitler dictator zonder democratische meerderheid?",
       "correct": [
-        "Hij werd pas laat staatsburger maar kreeg media-aandacht",
-        "Sterke campagne gesteund door industriëlen",
+        "Media-aandacht",
+        "Campagne gesteund door industriëlen",
         "Andere partijen vormden geen coalitie",
-        "Na de Rijksdagbrand mocht hij tegenstanders arresteren",
-        "Hij liet tegenstanders oppakken zodat ze niet konden stemmen",
-        "Verbod op andere partijen → alleenheerser"
+        "Rijksdagbrand → tegenstanders arresteren",
+        "Hij liet tegenstanders oppakken",
+        "Hij verbood andere partijen"
       ],
       "wrong": ["Hij won met 100% van de stemmen"]
     },
     {
-      "question": "Wat is de tactiek van het Zwarte Schaap of de Zondebok?",
+      "question": "Wat is de zondebok-tactiek?",
       "correct": ["Een vijand aanwijzen om de groep sterker te maken"],
       "wrong": ["Iedereen als vriend behandelen"]
     },
     {
-      "question": "Hoe gebruikt Hitler de Zondebok-tactiek?",
-      "correct": ["Hij geeft Joden, communisten en socialisten de schuld van alles"],
+      "question": "Hoe gebruikt Hitler de zondebok-tactiek?",
+      "correct": ["Joden, communisten, socialisten schuld geven van alles"],
       "wrong": ["Hij beschermt minderheden"]
-    },
+    }
+  ],
+
+  "breendonk": [
     {
-      "question": "Wat is de Dolkstootmythe?",
+      "question": "Wat is de geschiedenis van het Fort Breendonk tot WOII?",
       "correct": [
-        "Het idee dat Duitsland WOI niet verloor maar verraden werd door Joden en linkse partijen"
-      ],
-      "wrong": ["Een mythe over Duitse helden in WOI"]
-    },
-    {
-      "question": "Op welke manieren voeren de Nazi’s propaganda?",
-      "correct": [
-        "Controle over media",
-        "Heldencultus rond Hitler",
-        "Onderwijs vol nazi-ideologie",
-        "Massabijeenkomsten en parades"
-      ],
-      "wrong": ["Vrije pers stimuleren"]
-    },
-    {
-      "question": "Hoe raakte Hitler aan de macht?",
-      "correct": [
-        "Steun van geheime dienst",
-        "Beurscrash & economische crisis",
-        "Verdeeldheid politieke partijen",
-        "Wij-zij-boodschap",
-        "Propaganda"
-      ],
-      "wrong": ["Verkiezing met 90% meerderheid"]
-    }    {
-      "question": "Om welke 2 gebieden hebben de geallieerden overwicht waardoor ze WOI winnen?",
-      "correct": ["Economie", "Vloot"],
-      "wrong": ["Kolonies"]
-    },
-    {
-      "question": "Waarvoor hebben de Duitse kapitalisten schrik na de opstand aan het einde van WOI?",
-      "correct": ["Een communistische revolutie zoals in Rusland"],
-      "wrong": ["Een aanval van Frankrijk"]
-    },
-    {
-      "question": "Wie was Lenin?",
-      "correct": ["Leider van de Bolsjewieken (Russische communisten)"],
-      "wrong": ["President van Rusland"]
-    },
-    {
-      "question": "Welke maatregel van Lenin gaf Duitse kapitalisten schrik?",
-      "correct": ["Grootgrondbezitters verloren hun land"],
-      "wrong": ["Hij gaf gratis geld aan ondernemers"]
-    },
-    {
-      "question": "Wat gebeurde er met de keizer tijdens de opstand?",
-      "correct": ["Hij werd afgezet", "Hij vluchtte naar Nederland"],
-      "wrong": ["Hij werd vermoord"]
-    },
-    {
-      "question": "Wat is een Thule-cirkel?",
-      "correct": ["Een groep die racistisch Arisch nationalisme promoot"],
-      "wrong": ["Een communistische vereniging"]
-    },
-    {
-      "question": "Welke strijd voeren de communisten?",
-      "correct": ["Klassenstrijd (rijk vs arm)"],
-      "wrong": ["Strijd tussen landen"]
-    },
-    {
-      "question": "Welke strijd zet het leger daartegenover?",
-      "correct": ["Strijd tegen externe vijanden"],
-      "wrong": ["Strijd tegen boeren"]
-    },
-    {
-      "question": "Waarvoor staat NSDAP?",
-      "correct": ["Nationaal-Socialistische Duitse Arbeiderspartij"],
-      "wrong": ["Nieuwe Sociale Democratische Arbeiderspartij"]
-    },
-    {
-      "question": "Geef een kenmerk van Hitler’s boodschap in Mein Kampf.",
-      "correct": ["Arisch nationalisme"],
-      "wrong": ["Wereldvrede"]
-    }    {
-      "question": "Wat is de geschiedenis van het fort tot aan WOII?",
-      "correct": [
-        "Gebouwd tussen 1909 en 1914",
-        "Tijdens WOI zwaar beschoten en verouderd",
-        "Na WOI hoofdkwartier van het Belgische leger",
-        "In 1940 ingericht door de SS als gevangenenkamp"
+        "Gebouwd 1909–1914",
+        "Tijdens WOI verouderd en beschoten",
+        "Na WOI hoofdkwartier Belgisch leger",
+        "In 1940 SS-gevangenenkamp"
       ],
       "wrong": ["Het was oorspronkelijk een ziekenhuis"]
     },
@@ -347,42 +275,42 @@
       "wrong": ["Om handel te stimuleren"]
     },
     {
-      "question": "Welke steden moesten vooral beschermd worden en waarom?",
+      "question": "Welke steden moesten beschermd worden?",
       "correct": [
-        "Luik: centrum Belgische industrie",
-        "Antwerpen: belangrijkste toevoerhaven van België"
+        "Luik → industrie",
+        "Antwerpen → haven"
       ],
-      "wrong": ["Brussel: culturele hoofdstad"]
+      "wrong": ["Brussel → cultuur"]
     },
     {
       "question": "Wanneer is Fort Breendonk gebouwd?",
-      "correct": ["Tussen 1909 en 1914"],
-      "wrong": ["Tussen 1800 en 1820"]
+      "correct": ["1909–1914"],
+      "wrong": ["1800–1820"]
     },
     {
-      "question": "Waarom werd het fort na WOI het hoofdkwartier van het Belgische leger?",
-      "correct": ["Strategische ligging op as Brussel-Antwerpen en Mechelen-Dendermonde"],
-      "wrong": ["Omdat het het grootste fort van België was"]
+      "question": "Waarom werd Breendonk hoofdkwartier na WOI?",
+      "correct": ["Strategische ligging"],
+      "wrong": ["Het was het grootste fort"]
     },
     {
-      "question": "Waarvoor staat SS en welke eenheid was dat?",
-      "correct": ["Schutzstaffel, elite-eenheid van de Nazi’s"],
-      "wrong": ["Schutzpolitie, gewone politie-eenheid"]
+      "question": "Waarvoor staat SS?",
+      "correct": ["Schutzstaffel, elite-eenheid"],
+      "wrong": ["Schutzpolitie"]
     },
     {
-      "question": "Waarom kan je in een totalitair regime zonder rechten/reden worden opgepakt?",
+      "question": "Waarom kan je in een totalitair regime zomaar opgepakt worden?",
       "correct": ["Iedereen die niet akkoord gaat is een vijand"],
       "wrong": ["Omdat de politie dat leuk vond"]
     },
     {
-      "question": "Waarom kregen gevangenen een nummer in plaats van een naam?",
-      "correct": ["Om duidelijk te maken dat ze niet tellen als individu"],
-      "wrong": ["Om administratieve fouten te vermijden"]
+      "question": "Waarom kregen gevangenen nummers?",
+      "correct": ["Om te tonen dat ze geen individuen waren"],
+      "wrong": ["Om administratie makkelijker te maken"]
     },
     {
-      "question": "Waarom wisten families vaak niet wat er met hun naaste was gebeurd?",
-      "correct": ["Nazi’s gaven geen informatie en alles gebeurde in stilte"],
-      "wrong": ["Omdat gevangenen geen familie hadden"]
+      "question": "Waarom wisten families niet waar hun naasten waren?",
+      "correct": ["Nazi’s gaven geen info, alles geheim"],
+      "wrong": ["Gevangenen hadden geen familie"]
     },
     {
       "question": "Welke soorten gevangenen waren er?",
@@ -390,94 +318,45 @@
       "wrong": ["Vrijwilligers"]
     },
     {
-      "question": "Hoe zag het dagelijks leven eruit voor een gevangene?",
+      "question": "Hoe zag het dagelijkse leven eruit?",
       "correct": [
-        "32 tot 48 gevangenen per kamer met één emmer",
-        "Strenge controle door gevangenen zelf",
-        "Zware arbeid: 250.000 m³ aarde verplaatsen"
+        "Overvolle kamers",
+        "Zware arbeid",
+        "Strenge controle"
       ],
       "wrong": ["Ze hadden eigen kamers"]
-    },
+    }
+  ],
+
+  "periodisering": [
     {
-      "question": "Wat valt op aan de jaarlijkse instroom van Joden en niet-Joden tussen 1940 en 1944?",
-      "correct": [
-        "1940-42: vooral niet-Joden",
-        "Vanaf 1942: veel meer Joodse gevangenen",
-        "Tegen 1944: Joden meerderheid"
-      ],
-      "wrong": ["Het aantal gevangenen daalde elk jaar"]
-    },
-    {
-      "question": "Definieer totalitarisme en geef voorbeelden.",
-      "correct": [
-        "Staat heeft volledige controle over het leven",
-        "Voorbeelden: Nazi-Duitsland, Sovjet-Unie, China onder Mao"
-      ],
-      "wrong": ["Democratie met vrije meningen"]
-    },
-    {
-      "question": "Definieer fascisme.",
-      "correct": [
-        "Één leider beslist alles",
-        "Mensen hebben weinig vrijheid",
-        "Wie niet akkoord gaat wordt gestraft"
-      ],
-      "wrong": ["Een ideologie van totale vrijheid"]
-    },
-    {
-      "question": "Definieer nazisme.",
-      "correct": [
-        "Één leider beslist",
-        "Ontstaan in Duitsland met Hitler",
-        "Sterke nadruk op haat tegen Joden"
-      ],
-      "wrong": ["Een vorm van pacifisme"]
-    },
-    {
-      "question": "Toon met voorbeelden uit Breendonk hoe een totalitair regime werkt.",
-      "correct": [
-        "Gevangenen kregen nummers",
-        "Mishandeling bij inschrijving"
-      ],
-      "wrong": ["Gevangenen hadden inspraak in regels"]
-    },
-    {
-      "question": "Wat onderscheidt Breendonk van een klassieke gevangenis?",
-      "correct": ["Het extreme geweld, weinig eten, zware arbeid"],
-      "wrong": ["Er waren luxecellen"]
-    },
-    {
-      "question": "Waarom spreekt men van de 'hel van Breendonk'?",
-      "correct": ["Omdat de omstandigheden extreem wreed waren"],
-      "wrong": ["Omdat het er heel heet was"]
-        {
-      "question": "Wat is een eeuw en een millennium?",
+      "question": "Wat is een millennium?",
       "correct": ["1000 jaar"],
       "wrong": ["500 jaar"]
     },
     {
       "question": "Wat is een tijdsvak?",
       "correct": ["Een vak dat het verleden indeelt"],
-      "wrong": ["Een kalenderperiode voor examens"]
+      "wrong": ["Een examenperiode"]
     },
     {
-      "question": "Wat is periodisering van de geschiedenis?",
-      "correct": ["Het indelen van het verleden in tijdsvakken"],
-      "wrong": ["Het rangschikken van landen op wereldkaarten"]
+      "question": "Wat is periodisering?",
+      "correct": ["Het indelen van geschiedenis in tijdsvakken"],
+      "wrong": ["Het rangschikken van landen"]
     },
     {
-      "question": "Waarom delen we de geschiedenis in tijdsvakken in?",
+      "question": "Waarom gebruiken we tijdsvakken?",
       "correct": [
-        "Overzichtelijk maken",
-        "Structuur geven",
-        "Gebeurtenissen situeren",
-        "Periodes vergelijken",
-        "Labels maken om te onthouden"
+        "Overzicht",
+        "Structuur",
+        "Vergelijken",
+        "Situeren",
+        "Labels"
       ],
-      "wrong": ["Omdat historici anders te weinig werk zouden hebben"]
+      "wrong": ["Om historici aan werk te houden"]
     },
     {
-      "question": "Welke tijdsvakken gebruiken de Vlaamse historici?",
+      "question": "Welke 7 tijdsvakken zijn er?",
       "correct": [
         "Prehistorie",
         "Oude Nabije Oosten",
@@ -487,38 +366,33 @@
         "Moderne tijd",
         "Hedendaagse tijd"
       ],
-      "wrong": ["Steentijd, bronstijd en ijzertijd"]
+      "wrong": ["Steentijd, bronstijd, ijzertijd"]
     },
     {
-      "question": "Waarom is de indeling kunstmatig?",
-      "correct": ["Het is een afspraak die kan veranderen"],
-      "wrong": ["Omdat het door computers is berekend"]
+      "question": "Waarom is periodisering kunstmatig?",
+      "correct": ["Het is een afspraak"],
+      "wrong": ["Omdat computers dat beslissen"]
     },
     {
-      "question": "Waarom kun je beter 'ronde' getallen gebruiken in plaats van scharnierdata?",
-      "correct": ["Exacte datums zijn minder belangrijk dan periodes"],
-      "wrong": ["Omdat historici geen jaartallen willen onthouden"]
+      "question": "Waarom ronde getallen gebruiken?",
+      "correct": ["Exacte datums zijn minder belangrijk"],
+      "wrong": ["Historici kunnen geen datums onthouden"]
     },
     {
-      "question": "Waarom was de periodisering in Vlaanderen vroeger anders?",
-      "correct": ["Geschiedenis was nationalistischer en gericht op eigen land"],
-      "wrong": ["Omdat men toen geen interesse had in geschiedenis"]
+      "question": "Waarom was periodisering vroeger anders in Vlaanderen?",
+      "correct": ["Geschiedenis was nationalistischer"],
+      "wrong": ["Er was weinig interesse"]
     },
     {
-      "question": "Welke kritiek is er op de periodisering?",
+      "question": "Kritiek op periodisering?",
       "correct": [
-        "Te veel gericht op politieke gebeurtenissen",
-        "Te lokaal gericht",
-        "Naamgeving niet altijd correct",
-        "Te veel nadruk op breuken",
-        "Gebaseerd op Westers perspectief"
+        "Te politiek gericht",
+        "Te lokaal",
+        "Naamgeving fout",
+        "Te veel breuken",
+        "Westers perspectief"
       ],
-      "wrong": ["De tijdsvakken zijn te lang en saai"]
-    },
-    {
-      "question": "Welke criteria zou jij gebruiken om de geschiedenis in te delen?",
-      "correct": ["Op momenten van grote veranderingen zoals oorlogen of uitvindingen"],
-      "wrong": ["Op basis van astrologie"]
+      "wrong": ["Te lange periodes"]
     },
     {
       "question": "In welke eeuw leven we nu?",
@@ -526,22 +400,14 @@
       "wrong": ["20ste eeuw"]
     },
     {
-      "question": "In welk millennium leven we nu?",
+      "question": "In welk millennium leven we?",
       "correct": ["3de millennium"],
       "wrong": ["2de millennium"]
     },
     {
-      "question": "In welk historisch tijdsvak leven we nu?",
+      "question": "In welk tijdsvak leven we?",
       "correct": ["Hedendaagse tijd"],
       "wrong": ["Moderne tijd"]
-    },
-    {
-      "question": "Wat zijn scharnierdata?",
-      "correct": ["Datums waarop een periode eindigt en een nieuwe begint"],
-      "wrong": ["Datums waarop verkiezingen plaatsvinden"]
     }
+  ]
 }
-
-
-
-

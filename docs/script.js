@@ -1,79 +1,3 @@
-let currentQuestions = [];
-let currentIndex = 0;
-let selectedAnswer = null;
-
-async function startQuiz() {
-    const onderdeel = document.getElementById("quizSelect").value;
-
-    if (!onderdeel) {
-        alert("Kies eerst een onderdeel!");
-        return;
-    }
-
-    // JSON laden
-    const response = await fetch("data/questions.json");
-    const data = await response.json();
-
-    currentQuestions = data[onderdeel];
-    currentIndex = 0;
-
-    if (!currentQuestions || currentQuestions.length === 0) {
-        alert("Geen vragen beschikbaar voor dit onderdeel!");
-        return;
-    }
-
-    document.getElementById("quiz-area").style.display = "block";
-    loadQuestion();
-}
-
-function loadQuestion() {
-    const q = currentQuestions[currentIndex];
-
-    document.getElementById("quiz-question").innerText = q.question;
-
-    const answersDiv = document.getElementById("quiz-answers");
-    answersDiv.innerHTML = "";
-
-    selectedAnswer = null;
-
-    q.answers.forEach(ans => {
-        let btn = document.createElement("button");
-        btn.className = "quiz-btn";
-        btn.innerText = ans;
-        btn.onclick = () => {
-            selectedAnswer = ans;
-            document.querySelectorAll(".quiz-btn").forEach(b => b.classList.remove("selected"));
-            btn.classList.add("selected");
-        };
-
-        answersDiv.appendChild(btn);
-    });
-}
-
-function checkAnswer() {
-    if (!selectedAnswer) return alert("Kies een antwoord!");
-
-    const q = currentQuestions[currentIndex];
-    const isCorrect = q.correct.includes(selectedAnswer);
-
-    document.querySelectorAll(".quiz-btn").forEach(btn => {
-        if (q.correct.includes(btn.innerText)) {
-            btn.classList.add("correct");
-        } else {
-            btn.classList.add("wrong");
-        }
-        btn.style.pointerEvents = "none";
-    });
-
-    setTimeout(() => {
-        currentIndex++;
-        if (currentIndex >= currentQuestions.length) {
-            alert("Klaar! Je hebt de volledige quiz gedaan 🎉");
-        } else {
-            loadQuestion();
-        }
-    }, 1500);
-}
 // ---------------------------
 //   GLOBALS
 // ---------------------------
@@ -95,7 +19,7 @@ fetch("data/questions.json")
   });
 
 // ---------------------------
-//   LOAD FLASHCARDS
+//   FLASHCARDS
 // ---------------------------
 
 function loadFlashcards() {
@@ -133,7 +57,10 @@ function startQuiz() {
   const select = document.getElementById("quizSelect");
   const selected = select.value;
 
-  if (!selected) return;
+  if (!selected) {
+    alert("Kies eerst een onderdeel!");
+    return;
+  }
 
   currentQuestions = shuffleArray([...questionsData[selected]]);
   currentIndex = 0;
@@ -156,7 +83,6 @@ function loadQuestion() {
   const answersDiv = document.getElementById("quiz-answers");
   answersDiv.innerHTML = "";
 
-  // combine correct + wrong
   const answers = [...q.correct, ...q.wrong];
   const shuffled = shuffleArray(answers);
 
@@ -195,7 +121,6 @@ function checkAnswer() {
     alert("Fout ❌\nCorrecte antwoorden:\n" + currentCorrect.join("\n"));
   }
 
-  // Next question
   currentIndex++;
 
   if (currentIndex >= currentQuestions.length) {

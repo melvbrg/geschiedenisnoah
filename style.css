@@ -73,3 +73,29 @@ body {
     font-size: 18px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
+/* Confetti */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: fall 0.6s linear forwards;
+    border-radius: 3px;
+}
+
+@keyframes fall {
+    from {transform: translateY(0);}
+    to {transform: translateY(100vh);}
+}
+
+/* Quiz knoppen */
+.quiz-btn {
+    background: white;
+    border: 3px solid #ff99cc;
+    padding: 12px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    font-size: 18px;
+}

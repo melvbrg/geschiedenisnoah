@@ -1,40 +1,29 @@
+
 <!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8">
-<title>Studieplatform – Geschiedenis</title>
-<link rel="stylesheet" href="style.css">
+<html><head>
+<meta charset='UTF-8'>
+<title>Noah Studie</title>
+<link rel='stylesheet' href='style.css'>
+<script src='script.js' defer></script>
 </head>
 <body>
-<header>Interactieve Geschiedenisstudie – Examens</header>
-<div class="container" id="home">
-<h2>📚 Hoofdstukken</h2>
-<div class="card" onclick="openChapter('wo2')">Waarom startte Hitler WOII?</div>
-<div class="card" onclick="openChapter('macht1')">Hoe raakte Hitler aan de macht? – Deel 1</div>
-<div class="card" onclick="openChapter('breendonk')">Fort Breendonk</div>
-<div class="card" onclick="openChapter('macht2')">Hoe raakte Hitler aan de macht? – Deel 2</div>
-<div class="card" onclick="openChapter('periodisering')">Periodisering</div>
-<h2>🧠 Quiz</h2>
-<button onclick="showQuizSelector()">Kies document voor quiz</button>
-<h2>📈 Scoregeschiedenis</h2>
-<div id="history"></div>
+<div id='home' class='page active'>
+<h1>Noah's Studieplatform ❤️</h1>
+<button onclick="openPage('flash')">📚 Flashcards</button>
+<button onclick="openPage('quiz')">🧠 Quiz</button>
 </div>
-<div class="container hidden" id="chapter"></div>
-<div class="container hidden" id="quiz-select">
-<h2>Kies een document voor de quiz:</h2>
-<button onclick="startQuiz('wo2')">WOII</button>
-<button onclick="startQuiz('macht1')">Macht Deel 1</button>
-<button onclick="startQuiz('breendonk')">Breendonk</button>
-<button onclick="startQuiz('macht2')">Macht Deel 2</button>
-<button onclick="startQuiz('periodisering')">Periodisering</button>
+
+<div id='flash' class='page'>
+<h2>Flashcards</h2>
+<select id='flash-select' onchange='startFlashcards()'></select>
+<div id='flash-container'></div>
+<button onclick="openPage('home')">⬅️</button>
 </div>
-<div class="container hidden" id="quiz">
-<h2 id="quiz-title"></h2>
-<p id="question"></p>
-<input id="answer" placeholder="Jouw antwoord">
-<button onclick="checkAnswer()">Check</button>
-<p id="feedback"></p>
+
+<div id='quiz' class='page'>
+<h2>Quiz</h2>
+<select id='quiz-select' onchange='startQuiz()'></select>
+<div id='quiz-box'></div>
+<button onclick="openPage('home')">⬅️</button>
 </div>
-<script src="script.js"></script>
-</body>
-</html>
+</body></html>

@@ -1,53 +1,42 @@
-const chapters={
-wo2:[{q:'Waarom startte Hitler WOII?',a:'Expansiedrang'}],
-macht1:[{q:'Waarom werd WOI oorzaak WOII?',a:'Verdrag van Versailles'}],
-breendonk:[{q:'Wanneer is Fort Breendonk gebouwd?',a:'1909-1914'}],
-macht2:[{q:'Waarvoor staat NSDAP?',a:'Nationaal Socialistische Duitse Arbeiderspartij'}],
-periodisering:[{q:'Wat is een eeuw?',a:'100 jaar'}]
+
+const data = {"WOII": [{"q": "Waarom startte Hitler WOII?", "a": "Expansiedrang / Lebensraum"}, {"q": "Wat zijn de 3 strategie\u00ebn van Hitler?", "a": "Oosten-SU, Westen-havens, Bondgenoot-Itali\u00eb"}, {"q": "Economische noodzaak voor oorlog?", "a": "Geen toegang tot grondstoffen of zee\u00ebn"}, {"q": "Ideologische redenen?", "a": "Anti-communisme, anti-joods, Arisch ras overleven"}, {"q": "Waarom lieten FR/UK Hitler doen?", "a": "Trauma WOI, crisis, taalrecht, leger niet bedreigend"}, {"q": "Wat is de Phoney War?", "a": "FR/UK verklaren oorlog maar vallen Duitsland niet aan"}, {"q": "Andere namen Phoney War?", "a": "Dr\u00f4le de Guerre, Sitzkrieg"}, {"q": "Waarom valt FR niet aan?", "a": "Politiek verdeeld, defensief"}, {"q": "Waarom valt UK niet aan?", "a": "Klein leger"}, {"q": "Reactie op Polen?", "a": "Oorlog + sancties"}, {"q": "Hitlers antwoord?", "a": "Blitzkrieg"}, {"q": "Wat is Blitzkrieg?", "a": "Snelle aanval"}, {"q": "Crystal Meth rol?", "a": "Wakker houden"}, {"q": "Koning Belgi\u00eb?", "a": "Leopold III"}, {"q": "Wie weigerde vrede?", "a": "Churchill"}, {"q": "Hongerplan?", "a": "Sovjets verhongeren"}, {"q": "Grootste operatie?", "a": "Operatie Barbarossa"}, {"q": "Sterker leger?", "a": "FR+UK"}], "Hitler1": [{"q": "Waarom WOI oorzaak WOII?", "a": "Versailles \u2192 woede"}, {"q": "Waarom wonnen geallieerden?", "a": "Industrie+vloot"}, {"q": "Schrik revolutie?", "a": "Russisch voorbeeld"}, {"q": "Leger 1918?", "a": "Keizer weg + capitulatie"}, {"q": "Strijd tegen communisten?", "a": "Propaganda + spionnen"}, {"q": "Alternatief klassenstrijd?", "a": "Externe vijand"}, {"q": "Hoe politiek actief?", "a": "Spion \u2192 NSDAP"}, {"q": "Mein Kampf boodschap?", "a": "Arisch nationalisme"}, {"q": "Versailles frustratie?", "a": "Land+betalingen"}, {"q": "Waarom VS leningen?", "a": "Stabiliteit"}, {"q": "Gevolg leningen?", "a": "Gouden jaren 20"}, {"q": "Stop leningen?", "a": "Beurscrash"}, {"q": "Oorzaken crash?", "a": "Schulden, banken"}, {"q": "Periode na 1929?", "a": "Depressie"}, {"q": "Hoe dictator?", "a": "Reichstagbrand"}, {"q": "Zondebok?", "a": "1 vijand"}, {"q": "Op wie schuld?", "a": "Joden+communisten"}, {"q": "Dolkstoot?", "a": "Verraad WOI"}, {"q": "Propaganda?", "a": "Media+parades"}], "Hitler2": [{"q": "Overwicht geallieerden?", "a": "Economie+vloot"}, {"q": "Schrik kapitalisten?", "a": "Communisme"}, {"q": "Wie was Lenin?", "a": "Leider Bolsjewieken"}, {"q": "Maatregel Lenin?", "a": "Landafname"}, {"q": "Wat met keizer?", "a": "Vlucht NL"}, {"q": "Thule-cirkel?", "a": "Arische groep"}, {"q": "Klassenstrijd?", "a": "Arm vs rijk"}, {"q": "Alternatief strijd?", "a": "Externe vijanden"}, {"q": "NSDAP?", "a": "Nationaal-Socialistische Duitse Arbeiderspartij"}, {"q": "Kenmerk Mein Kampf?", "a": "Arisch nationalisme"}], "Breendonk": [{"q": "Geschiedenis fort?", "a": "1909-14 \u2192 SS kamp"}, {"q": "Waarom fortengordel?", "a": "Bescherming BE"}, {"q": "Welke steden?", "a": "Luik+Antwerpen"}, {"q": "Wanneer gebouwd?", "a": "1909\u20131914"}, {"q": "Waarom HQ?", "a": "Strategie"}, {"q": "SS?", "a": "Schutzstaffel"}, {"q": "Waarom opgepakt?", "a": "Totalitarisme"}, {"q": "Waarom nummers?", "a": "Ontmenselijking"}, {"q": "Geen info?", "a": "Geheimhouding"}, {"q": "Soorten gevangenen?", "a": "Haftlinge+gijzelaars"}, {"q": "Dagelijks leven?", "a": "Overbevolkt+arbeid"}, {"q": "Instroom Joden?", "a": "Stijgt 42-44"}, {"q": "Totalitarisme?", "a": "Volledige controle"}, {"q": "Fascisme?", "a": "1 leider"}, {"q": "Nazisme?", "a": "Fascisme+rassenhaat"}, {"q": "Voorbeelden?", "a": "Geweld, nummers"}, {"q": "Verschil gevangenis?", "a": "Wreedheid"}, {"q": "Waarom hel?", "a": "Marteling+honger"}], "Periodisering": [{"q": "Eeuw?", "a": "100 jaar"}, {"q": "Millennium?", "a": "1000 jaar"}, {"q": "Tijdsvak?", "a": "Indeling"}, {"q": "Periodisering?", "a": "Verdelen verleden"}, {"q": "Waarom tijdsvakken?", "a": "Structuur"}, {"q": "7 tijdsvakken?", "a": "Prehistorie \u2192 Hedendaags"}, {"q": "Waarom kunstmatig?", "a": "Afspraken"}, {"q": "Ronde jaartallen?", "a": "Geen exact moment"}, {"q": "Waarom vroeger anders?", "a": "Nationalisme"}, {"q": "Kritiek?", "a": "Te politiek"}, {"q": "Jouw criteria?", "a": "Grote veranderingen"}, {"q": "Welke eeuw?", "a": "21e"}, {"q": "Welk millennium?", "a": "3e"}, {"q": "Huidig tijdvak?", "a": "Hedendaags"}, {"q": "Scharnierdata?", "a": "Overgangen"}]};
+
+function openPage(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+}
+
+window.onload=()=>{
+ let fs=document.getElementById('flash-select');
+ let qs=document.getElementById('quiz-select');
+ Object.keys(data).forEach(k=>{
+   fs.innerHTML+=`<option value="${k}">${k}</option>`;
+   qs.innerHTML+=`<option value="${k}">${k}</option>`;
+ });
 };
 
-let currentQuiz=[],currentIndex=0,currentDoc='';
+function startFlashcards(){
+ let key=document.getElementById('flash-select').value;
+ let box=document.getElementById('flash-container');
+ box.innerHTML="";
+ data[key].forEach(card=>{
+    box.innerHTML+=`<div class='flashcard'><b>${card.q}</b><br><br><span style='color:#ff7f50'>${card.a}</span></div>`;
+ });
+}
 
-function openChapter(id){
-document.getElementById('home').classList.add('hidden');
-const c=document.getElementById('chapter');
-c.innerHTML='<h2>Flashcards</h2>';
-chapters[id].forEach(x=>{c.innerHTML+=`<div class='card' onclick="alert('${x.a}')">${x.q}</div>`});
-c.classList.remove('hidden');
-}
-function showQuizSelector(){
-document.getElementById('home').classList.add('hidden');
-document.getElementById('quiz-select').classList.remove('hidden');
-}
-function startQuiz(doc){
-currentDoc=doc;currentQuiz=[...chapters[doc]];currentIndex=0;
-document.getElementById('quiz-select').classList.add('hidden');
-document.getElementById('quiz').classList.remove('hidden');
-document.getElementById('quiz-title').innerText='Quiz – '+doc;
-loadQuestion();
-}
-function loadQuestion(){
-document.getElementById('question').innerText=currentQuiz[currentIndex].q;
-document.getElementById('answer').value='';
-document.getElementById('feedback').innerText='';
-}
-function confetti(){
-for(let i=0;i<40;i++){
-const d=document.createElement('div');
-d.className='confetti';
-d.style.left=Math.random()*100+'vw';
-d.style.background=`hsl(${Math.random()*360},80%,60%)`;
-document.body.appendChild(d);
-setTimeout(()=>d.remove(),1500);
-}}
-function checkAnswer(){
-const inp=document.getElementById('answer').value.toLowerCase().trim();
-const right=chapters[currentDoc][currentIndex].a.toLowerCase();
-if(inp && right.includes(inp)){
-document.getElementById('feedback').innerText='Juist! 🎉';
-confetti();
-} else document.getElementById('feedback').innerText='Fout ❌';
-currentIndex++;
-if(currentIndex<currentQuiz.length)setTimeout(loadQuestion,1000);
-else document.getElementById('feedback').innerText+='\nQuiz klaar!';
+function startQuiz(){
+ let key=document.getElementById('quiz-select').value;
+ let box=document.getElementById('quiz-box');
+ let arr=data[key];
+ let i=0;
+ function ask(){
+   box.innerHTML=`<h3>${arr[i].q}</h3><input id='ans'><button onclick='go()'>OK</button><p id='fb'></p>`;
+ }
+ window.go=function(){
+   let a=document.getElementById('ans').value.toLowerCase();
+   if(arr[i].a.toLowerCase().includes(a)) document.getElementById('fb').innerText="Juist!";
+   else document.getElementById('fb').innerText="Fout!";
+   i=(i+1)%arr.length; setTimeout(ask,900);
+ };
+ ask();
 }

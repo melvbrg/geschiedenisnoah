@@ -1,10 +1,7 @@
-body{font-family:Arial;background:#f4f6fb;margin:0}
-header{background:#3b5bdb;padding:20px;text-align:center;color:#fff;font-size:28px}
-.container{padding:20px;max-width:900px;margin:auto}
-.card{background:#fff;padding:20px;border-radius:10px;margin-bottom:20px;box-shadow:0 4px 10px rgba(0,0,0,0.1);cursor:pointer;transition:.2s}
-.card:hover{transform:scale(1.02)}
-button{background:#3b5bdb;color:#fff;padding:10px 18px;border:none;border-radius:8px;font-size:16px;cursor:pointer}
-button:hover{background:#5168e1}
-.hidden{display:none}
-.confetti{position:fixed;width:10px;height:10px;background:red;top:-10px;animation:fall 1.5s linear forwards}
-@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+
+body{margin:0;font-family:Arial;background:#ffe6f0;text-align:center;}
+button{background:#ff7f50;color:white;border:none;padding:15px 20px;font-size:18px;border-radius:10px;margin:10px;}
+.page{display:none;padding:20px;}
+.page.active{display:block;}
+#flash-container{height:70vh;overflow-y:scroll;scroll-snap-type:y mandatory;}
+.flashcard{scroll-snap-align:start;background:white;margin:20px;padding:50px;border-radius:20px;box-shadow:0 0 10px #ffa1a1;font-size:22px;}

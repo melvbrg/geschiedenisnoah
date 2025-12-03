@@ -1,151 +1,99 @@
-// ------------------------------
-// Laden van JSON met vragen
-// ------------------------------
+let vragen = {};
+let huidigeVragen = [];
+let index = 0;
+let score = 0;
+let huidigOnderdeel = "";
+
 async function loadQuestions() {
-    const res = await fetch("data/questions.json");
-    return await res.json();
+    const response = await fetch("data/questions.json");
+    vragen = await response.json();
 }
 
-// ------------------------------
-// FLASHCARDS
-// ------------------------------
-document.addEventListener("DOMContentLoaded", async () => {
-    const data = await loadQuestions();
+loadQuestions();
 
-    // FLASHCARDS PAGE
-    const select = document.getElementById("flashcard-select");
-    if (select) {
-        select.addEventListener("change", () => {
-            const chosen = select.value;
-            showFlashcards(chosen, data);
-        });
-    }
+function startQuiz() {
+    const selectie = document.getElementById("onderdeel-dropdown").value;
+    if (!selectie) return alert("Kies een onderdeel!");
 
-    // QUIZ PAGE
-    const quizSelect = document.getElementById("quiz-select");
-    if (quizSelect) {
-        quizSelect.addEventListener("change", () => {
-            const chosen = quizSelect.value;
-            startQuiz(chosen, data);
-        });
-    }
-});
+    huidigOnderdeel = selectie;
+    huidigeVragen = vragen[selectie];
+    index = 0;
+    score = 0;
 
-function showFlashcards(topic, data) {
-    const container = document.getElementById("flashcard-container");
-    container.innerHTML = "";
+    document.getElementById("onderdeel-selectie").style.display = "none";
+    document.getElementById("quiz-container").style.display = "block";
 
-    if (!topic || !data[topic]) return;
+    toonVraag();
+}
 
-    data[topic].forEach(q => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `<b>${q.question}</b><br><br>${q.answer}`;
-        container.appendChild(card);
+function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+function toonVraag() {
+    let vraagObj = huidigeVragen[index];
+
+    document.getElementById("feedback").innerText = "";
+    document.getElementById("vraag").innerText = vraagObj.vraag;
+
+    let antwoordenDiv = document.getElementById("antwoorden");
+    antwoordenDiv.innerHTML = "";
+
+    let opties = [vraagObj.juist, ...vraagObj.fout];
+    opties = shuffle(opies);
+
+    opties.forEach(optie => {
+        let btn = document.createElement("button");
+        btn.className = "quiz-btn";
+        btn.innerText = optie;
+        btn.onclick = () => controleerAntwoord(optie, vraagObj.juist, btn);
+        antwoordenDiv.appendChild(btn);
     });
 }
 
-// ------------------------------
-// QUIZ
-// ------------------------------
+function controleerAntwoord(gegeven, juist, knop) {
+    let buttons = document.querySelectorAll(".quiz-btn");
 
-let currentIndex = 0;
-let currentQuestions = [];
-let currentTopic = "";
-let score = 0;
+    buttons.forEach(b => b.disabled = true);
 
-function startQuiz(topic, data) {
-    if (!topic || !data[topic]) return;
+    if (gegeven === juist) {
+        knop.style.background = "#8fda9f";
+        confetti();
+        score++;
+    } else {
+        knop.style.background = "#ff9e9e";
 
-    currentTopic = topic;
-    currentQuestions = [...data[topic]];
+        buttons.forEach(b => {
+            if (b.innerText === juist) b.style.background = "#8fda9f";
+        });
+    }
 
-    // shuffle:
-    currentQuestions = currentQuestions.sort(() => Math.random() - 0.5);
-
-    currentIndex = 0;
-    score = 0;
-
-    showQuestion();
+    document.getElementById("feedback").innerText = 
+        `${index + 1} / ${huidigeVragen.length}`;
 }
 
-function showQuestion() {
-    const quizBox = document.getElementById("quiz-box");
-    if (!quizBox) return;
+function volgendeVraag() {
+    index++;
 
-    quizBox.innerHTML = "";
-
-    if (currentIndex >= currentQuestions.length) {
-        quizBox.innerHTML = `
-            <h2>Quiz klaar!</h2>
-            <p>Score: ${score}/${currentQuestions.length}</p>
-        `;
-        saveScore(currentTopic, score, currentQuestions.length);
+    if (index >= huidigeVragen.length) {
+        localStorage.setItem("score_" + huidigOnderdeel, score);
+        alert("Klaar! Je score: " + score);
+        window.location.href = "scores.html";
         return;
     }
 
-    const q = currentQuestions[currentIndex];
-
-    const shuffledOptions = [...q.options].sort(() => Math.random() - 0.5);
-
-    let html = `<h3>${q.question}</h3>`;
-    shuffledOptions.forEach(opt => {
-        html += `<button class="quiz-btn" onclick="checkAnswer('${opt.replace(/'/g, "\\'")}')">${opt}</button>`;
-    });
-
-    quizBox.innerHTML = html;
+    toonVraag();
 }
 
-function checkAnswer(option) {
-    const q = currentQuestions[currentIndex];
-    const quizBox = document.getElementById("quiz-box");
+// Confetti effect
+function confetti() {
+    for (let i = 0; i < 20; i++) {
+        let c = document.createElement("div");
+        c.className = "confetti";
+        document.body.appendChild(c);
 
-    if (option === q.answer) {
-        score++;
-        confettiEffect();
+        c.style.left = Math.random() * window.innerWidth + "px";
+
+        setTimeout(() => c.remove(), 600);
     }
-
-    currentIndex++;
-    showQuestion();
-}
-
-// ------------------------------
-// SCORES OPSLAAN
-// ------------------------------
-function saveScore(topic, score, total) {
-    const allScores = JSON.parse(localStorage.getItem("scores") || "{}");
-
-    if (!allScores[topic]) allScores[topic] = [];
-
-    allScores[topic].push({
-        date: new Date().toLocaleString(),
-        score: score,
-        total: total
-    });
-
-    localStorage.setItem("scores", JSON.stringify(allScores));
-}
-
-// ------------------------------
-// CONFETTI EFFECT
-// ------------------------------
-function confettiEffect() {
-    const duration = 600;
-    const end = Date.now() + duration;
-
-    (function frame() {
-        const colors = ["#ff80bf", "#ff9966", "#ff4da6", "#ffa64d"];
-
-        for (let i = 0; i < 5; i++) {
-            const conf = document.createElement("div");
-            conf.className = "confetti";
-            conf.style.background = colors[Math.floor(Math.random()*colors.length)];
-            conf.style.left = Math.random() * window.innerWidth + "px";
-            document.body.appendChild(conf);
-
-            setTimeout(() => conf.remove(), 600);
-        }
-
-        if (Date.now() < end) requestAnimationFrame(frame);
-    }());
 }

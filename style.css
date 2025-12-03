@@ -1,0 +1,7 @@
+
+body{margin:0;font-family:Arial;background:#ffe6f2;}
+header{background:#ff7eb3;padding:15px;color:white;position:sticky;top:0;text-align:center;}
+.home-btn{position:absolute;left:10px;top:10px;background:white;color:#ff5f90;border:none;padding:8px 12px;border-radius:10px;}
+.page{display:none;padding:20px;}
+.page.active{display:block;}
+.card{background:white;padding:20px;margin:15px;border-radius:15px;box-shadow:0 3px 8px rgba(0,0,0,0.15);}

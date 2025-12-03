@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <title>Quiz</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 
 <body>
-    <h1 class="title">🎯 Quiz</h1>
 
-    <a href="index.html" class="btn">🏡 Home</a>
+    <a href="index.html" class="home-btn">🏠 Home</a>
 
-    <div id="onderdeel-selectie" class="card">
-        <h2>Kies een onderdeel</h2>
-        <select id="onderdeel-dropdown">
-            <option value="">-- Kies --</option>
-            <option value="wo2">WOII</option>
-            <option value="hitler1">Hitler deel 1</option>
-            <option value="hitler2">Hitler deel 2</option>
-            <option value="breendonk">Breendonk</option>
-            <option value="periodisering">Periodisering</option>
-        </select>
-        <button onclick="startQuiz()" class="btn">Start quiz</button>
+    <h1 class="title">Quiz</h1>
+
+    <!-- KIES ONDERDEEL -->
+    <select id="quizSelect" class="dropdown">
+        <option value="">Kies een onderdeel</option>
+        <option value="wo2">WOII</option>
+        <option value="hitler1">Hitler Deel 1</option>
+        <option value="hitler2">Hitler Deel 2</option>
+        <option value="breendonk">Breendonk</option>
+        <option value="periodisering">Periodisering</option>
+    </select>
+
+    <button class="tile" onclick="startQuiz()">Start Quiz</button>
+
+    <!-- QUIZ ZELF -->
+    <div id="quiz-area" style="display:none; margin-top:20px;">
+
+        <h2 id="quiz-question"></h2>
+
+        <div id="quiz-answers"></div>
+
+        <button class="tile" onclick="checkAnswer()">Controleer</button>
+
     </div>
 
-    <div id="quiz-container" class="card" style="display:none;">
-        <h2 id="vraag"></h2>
-        <div id="antwoorden"></div>
-        <p id="feedback"></p>
-        <button class="btn" onclick="volgendeVraag()">Volgende</button>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

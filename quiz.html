@@ -1,7 +1,36 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<html><head><link rel="stylesheet" href="style.css"><meta charset="utf-8"></head>
-<body><h1>🎯 Quiz</h1>
-<select id="section"></select>
-<div id="quiz"></div>
-<script src="script.js"></script>
-</body></html>
+<body>
+    <h1 class="title">🎯 Quiz</h1>
+
+    <a href="index.html" class="btn">🏡 Home</a>
+
+    <div id="onderdeel-selectie" class="card">
+        <h2>Kies een onderdeel</h2>
+        <select id="onderdeel-dropdown">
+            <option value="">-- Kies --</option>
+            <option value="wo2">WOII</option>
+            <option value="hitler1">Hitler deel 1</option>
+            <option value="hitler2">Hitler deel 2</option>
+            <option value="breendonk">Breendonk</option>
+            <option value="periodisering">Periodisering</option>
+        </select>
+        <button onclick="startQuiz()" class="btn">Start quiz</button>
+    </div>
+
+    <div id="quiz-container" class="card" style="display:none;">
+        <h2 id="vraag"></h2>
+        <div id="antwoorden"></div>
+        <p id="feedback"></p>
+        <button class="btn" onclick="volgendeVraag()">Volgende</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

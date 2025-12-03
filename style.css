@@ -1,5 +1,75 @@
+/* Algemene stijl */
+body {
+    background: #ffe6f2;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+}
 
-body{background:#ffd6e5;text-align:center;font-family:Arial;margin:0;padding:40px;}
-.btn{display:block;background:#ff73a1;color:white;padding:15px;margin:15px auto;width:200px;border-radius:12px;text-decoration:none;font-size:20px;}
-.card{background:white;padding:20px;margin:20px;border-radius:15px;}
-.opt{margin:5px;padding:10px;border-radius:8px;border:1px solid #999;background:white;}
+.title {
+    font-size: 32px;
+    color: #ff4da6;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Homepagina tegels */
+.home-buttons, .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.tile {
+    background: linear-gradient(135deg, #ff80bf, #ff9966);
+    padding: 18px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Home-knop op andere pagina’s */
+.home-btn {
+    display: inline-block;
+    background: #ff66b3;
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Dropdown */
+.dropdown {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #ff99cc;
+    margin-bottom: 20px;
+}
+
+/* Flashcards */
+#flashcard-container .card {
+    background: white;
+    padding: 15px;
+    margin: 10px auto;
+    width: 90%;
+    border-radius: 12px;
+    border-left: 8px solid #ff80bf;
+    font-size: 18px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}

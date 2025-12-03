@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html><head>
+<meta charset='UTF-8'>
+<title>Noah Studie</title>
+<link rel='stylesheet' href='style.css'>
+<script src='script.js' defer></script>
+</head>
+<body>
+<div id='home' class='page active'>
+<h1>Noah's Studieplatform ❤️</h1>
+<button onclick="openPage('flash')">📚 Flashcards</button>
+<button onclick="openPage('quiz')">🧠 Quiz</button>
+</div>
+
+<div id='flash' class='page'>
+<h2>Flashcards</h2>
+<select id='flash-select' onchange='startFlashcards()'></select>
+<div id='flash-container'></div>
+<button onclick="openPage('home')">⬅️</button>
+</div>
+
+<div id='quiz' class='page'>
+<h2>Quiz</h2>
+<select id='quiz-select' onchange='startQuiz()'></select>
+<div id='quiz-box'></div>
+<button onclick="openPage('home')">⬅️</button>
+</div>
+</body></html>

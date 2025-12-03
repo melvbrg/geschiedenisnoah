@@ -1,40 +1,207 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-</head>
+// ---------------------------
+//   GLOBALS
+// ---------------------------
 
-<body>
+let questionsData = {};
+let currentQuestions = [];
+let currentIndex = 0;
+let currentCorrect = [];
+let score = 0;
 
-    <a href="index.html" class="home-btn">🏠 Home</a>
+// ---------------------------
+//   LOAD JSON
+// ---------------------------
 
-    <h1 class="title">Quiz</h1>
+fetch("data/questions.json")
+  .then(response => response.json())
+  .then(data => {
+    questionsData = data;
+  });
 
-    <!-- KIES ONDERDEEL -->
-    <select id="quizSelect" class="dropdown">
-        <option value="">Kies een onderdeel</option>
-        <option value="wo2">WOII</option>
-        <option value="hitler1">Hitler Deel 1</option>
-        <option value="hitler2">Hitler Deel 2</option>
-        <option value="breendonk">Breendonk</option>
-        <option value="periodisering">Periodisering</option>
-    </select>
+// ---------------------------
+//   FLASHCARDS
+// ---------------------------
 
-    <button class="tile" onclick="startQuiz()">Start Quiz</button>
+function loadFlashcards() {
+  const select = document.getElementById("flashcardSelect");
+  const container = document.getElementById("flashcard-container");
 
-    <!-- QUIZ ZELF -->
-    <div id="quiz-area" style="display:none; margin-top:20px;">
+  const selected = select.value;
+  container.innerHTML = "";
 
-        <h2 id="quiz-question"></h2>
+  if (!selected) return;
 
-        <div id="quiz-answers"></div>
+  const list = questionsData[selected];
 
-        <button class="tile" onclick="checkAnswer()">Controleer</button>
+  list.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card";
 
-    </div>
+    const q = document.createElement("h3");
+    q.innerText = item.question;
 
-</body>
-</html>
+    const a = document.createElement("p");
+    a.innerText = "Antwoorden: " + item.correct.join(", ");
+
+    card.appendChild(q);
+    card.appendChild(a);
+    container.appendChild(card);
+  });
+}
+
+// ---------------------------
+//   START QUIZ
+// ---------------------------
+
+function startQuiz() {
+  const select = document.getElementById("quizSelect");
+  const selected = select.value;
+
+  if (!selected) {
+    alert("Kies eerst een onderdeel!");
+    return;
+  }
+
+  currentQuestions = shuffleArray([...questionsData[selected]]);
+  currentIndex = 0;
+  score = 0;
+
+  document.getElementById("quiz-area").style.display = "block";
+
+  loadQuestion();
+}
+
+// ---------------------------
+//   LOAD QUESTION
+// ---------------------------
+
+function loadQuestion() {
+  const q = currentQuestions[currentIndex];
+
+  document.getElementById("quiz-question").innerText = q.question;
+
+  const answersDiv = document.getElementById("quiz-answers");
+  answersDiv.innerHTML = "";
+
+  // combine correct + wrong
+  const answers = [...q.correct, ...q.wrong];
+  const shuffled = shuffleArray(answers);
+
+  currentCorrect = q.correct;
+
+  shuffled.forEach(ans => {
+    const label = document.createElement("label");
+    label.className = "answer-option";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = ans;
+
+    label.appendChild(checkbox);
+    label.append(" " + ans);
+    answersDiv.appendChild(label);
+  });
+}
+
+// ---------------------------
+//   CHECK ANSWER
+// ---------------------------
+
+function checkAnswer() {
+  const chosen = [...document.querySelectorAll("#quiz-answers input:checked")].map(el => el.value);
+
+  const allCorrect = 
+    chosen.length === currentCorrect.length &&
+    chosen.every(a => currentCorrect.includes(a));
+
+  if (allCorrect) {
+    score++;
+    showConfetti();
+    alert("Juist! 🎉");
+  } else {
+    alert("Fout ❌\nCorrecte antwoorden:\n" + currentCorrect.join("\n"));
+  }
+
+  currentIndex++;
+
+  if (currentIndex >= currentQuestions.length) {
+    endQuiz();
+  } else {
+    loadQuestion();
+  }
+}
+
+// ---------------------------
+//   END QUIZ
+// ---------------------------
+
+function endQuiz() {
+  alert("Quiz afgelopen! Score: " + score + "/" + currentQuestions.length);
+
+  saveScore(score, currentQuestions.length);
+
+  document.getElementById("quiz-area").style.display = "none";
+}
+
+// ---------------------------
+//   SAVE SCORE
+// ---------------------------
+
+function saveScore(score, total) {
+  const rec = JSON.parse(localStorage.getItem("scores") || "[]");
+
+  rec.push({
+    date: new Date().toLocaleString(),
+    score: score,
+    total: total
+  });
+
+  localStorage.setItem("scores", JSON.stringify(rec));
+}
+
+// ---------------------------
+//   LOAD SCORES
+// ---------------------------
+
+function loadScores() {
+  const list = JSON.parse(localStorage.getItem("scores") || "[]");
+  const container = document.getElementById("score-list");
+
+  container.innerHTML = "";
+
+  list.forEach(s => {
+    const div = document.createElement("div");
+    div.className = "score-card";
+    div.innerText = `${s.date} — ${s.score}/${s.total}`;
+    container.appendChild(div);
+  });
+}
+
+// ---------------------------
+//   CONFETTI EFFECT
+// ---------------------------
+
+function showConfetti() {
+  const confetti = document.createElement("div");
+  confetti.className = "confetti";
+
+  for (let i = 0; i < 30; i++) {
+    const piece = document.createElement("div");
+    piece.className = "confetti-piece";
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.animationDelay = Math.random() * 1 + "s";
+    confetti.appendChild(piece);
+  }
+
+  document.body.appendChild(confetti);
+
+  setTimeout(() => confetti.remove(), 2000);
+}
+
+// ---------------------------
+//   SHUFFLE FUNCTION
+// ---------------------------
+
+function shuffleArray(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}

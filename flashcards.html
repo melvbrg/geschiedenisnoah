@@ -1,6 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcards</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
 
-<html><head><link rel="stylesheet" href="style.css"><meta charset="utf-8"></head>
-<body><h1>📚 Flashcards</h1>
-<div id="cards"></div>
-<script src="script.js"></script>
-</body></html>
+<body>
+  <h1 class="title">📝 Flashcards</h1>
+
+  <a href="index.html" class="home-btn">🏠 Home</a>
+
+  <div class="container">
+
+    <h2>Kies een onderdeel:</h2>
+
+    <select id="flashcard-select" class="dropdown">
+      <option value="">— Kies —</option>
+      <option value="wo2">Waarom startte Hitler WOII?</option>
+      <option value="hitler1">Hoe raakte Hitler aan de macht? (Deel 1)</option>
+      <option value="hitler2">Hoe raakte Hitler aan de macht? (Deel 2)</option>
+      <option value="breendonk">Breendonk</option>
+      <option value="periodisering">Periodisering</option>
+    </select>
+
+    <div id="flashcard-container"></div>
+
+  </div>
+</body>
+</html>
+

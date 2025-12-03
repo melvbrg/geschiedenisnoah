@@ -1,0 +1,8 @@
+
+body{font-family:Arial;background:#ffe6f2;text-align:center;}
+h1{color:#ff4f8b;}
+.btn{display:block;margin:20px auto;padding:15px;
+background:#ff7eb3;color:white;width:250px;border-radius:15px;
+text-decoration:none;font-size:20px;}
+.card{background:white;border-radius:15px;padding:20px;margin:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);}
